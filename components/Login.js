@@ -12,10 +12,11 @@ import LoginForm from "./LoginForm";
 // create a component
 class Login extends Component {
   render() {
+
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <View style={styles.loginContainer}>
-          <LoginForm />
+        <View style={styles.loginContainer} >
+          <LoginForm navigation={this.props.navigation} />
         </View>
       </KeyboardAvoidingView>
     );

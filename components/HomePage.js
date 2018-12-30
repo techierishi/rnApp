@@ -1,16 +1,22 @@
 //import liraries
 import React, { Component } from "react";
-import { View, TextInput, StyleSheet, StatusBar } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
-import AppButton from "./AppButton";
+import {
+  View,
+  Text,
+  TextInput,
+  Alert,
+  StyleSheet,
+  StatusBar
+} from "react-native";
 
-class LoginForm extends Component {
-  onButtonPress = () => {
-    // Alert.alert("Button has been pressed!");
-    // console.log(this.props);
-    this.props.navigation.navigate("Home");
-  };
+import AppButton from './AppButton'
 
+const onButtonPress = () => {
+  Alert.alert("Button has been pressed!");
+};
+
+// create a component
+class HomePage extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -22,11 +28,12 @@ class LoginForm extends Component {
           autoCorrect={false}
           keyboardType="email-address"
           returnKeyType="next"
-          placeholder="Mobile Number"
+          placeholder="HomePage"
           placeholderTextColor="#999999"
         />
 
-        <AppButton text="LOGIN" onPress={this.onButtonPress} />
+
+
       </View>
     );
   }
@@ -50,7 +57,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 50
   },
-  labelext: {
+  labelext :{
     color: "#ee4b50",
     textAlign: "center",
     marginTop: 10,
@@ -68,4 +75,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default LoginForm;
+export default HomePage;
